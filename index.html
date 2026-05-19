@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSD ↔ Figma — Free Converter</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;line-height:1.6;background:#fff}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{padding:48px 0 32px;text-align:center}
+header h1{font-size:2rem;margin-bottom:8px}
+header p{font-size:1.1rem;color:#555}
+.badge{display:inline-block;background:#18A0FB;color:#fff;padding:4px 12px;border-radius:12px;font-size:0.85rem;margin:12px 4px 0}
+.badge.green{background:#1bc47d}
+section{padding:32px 0;border-top:1px solid #eee}
+h2{font-size:1.4rem;margin-bottom:16px}
+h3{font-size:1.1rem;margin:20px 0 8px;color:#333}
+ul{padding-left:20px;margin-bottom:16px}
+li{margin-bottom:6px}
+.pricing{text-align:center;padding:40px 0}
+.plans{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.plan{border:2px solid #eee;border-radius:12px;padding:32px 28px;width:280px;text-align:center}
+.plan.pro{border-color:#18A0FB}
+.plan h3{margin:0 0 8px;font-size:1.3rem}
+.plan .price{font-size:2.2rem;font-weight:700;margin:12px 0 4px}
+.plan .price span{font-size:0.9rem;font-weight:400;color:#777}
+.plan ul{text-align:left;margin-top:16px}
+.plan .label{display:inline-block;background:#18A0FB;color:#fff;padding:2px 10px;border-radius:8px;font-size:0.8rem;margin-bottom:12px}
+.cta{display:inline-block;margin-top:20px;padding:12px 32px;background:#18A0FB;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem}
+.cta:hover{background:#0d8de0}
+.cta.secondary{background:#f0f0f0;color:#333}
+.cta.secondary:hover{background:#e0e0e0}
+footer{padding:32px 0;border-top:1px solid #eee;text-align:center;color:#999;font-size:0.85rem}
+footer a{color:#999;margin:0 12px}
+.privacy-note{background:#f8f9fa;border-radius:8px;padding:16px 20px;margin:20px 0;text-align:center;color:#555}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>PSD &#8596; Figma</h1>
+<p>Free bidirectional converter between Adobe Photoshop and Figma</p>
+<span class="badge">Figma Plugin</span>
+<span class="badge green">100% Local Processing</span>
+</div>
+</header>
+
+<div class="container">
+
+<section>
+<h2>What it does</h2>
+<p>A Figma plugin that converts between Adobe Photoshop (.psd) files and Figma designs. Import PSD files into Figma with full layer fidelity, or export Figma frames back to layered PSD files.</p>
+<div class="privacy-note">All processing happens locally in your browser. Your files are never uploaded to any server.</div>
+</section>
+
+<section>
+<h2>Features</h2>
+<h3>PSD to Figma (Import)</h3>
+<ul>
+<li>Full layer structure &mdash; groups, images, text, shapes with correct hierarchy</li>
+<li>Component detection &mdash; identifies repeated elements, converts to Figma Components</li>
+<li>Mixed-style text &mdash; per-character font, size, color, letter-spacing</li>
+<li>Effects &mdash; shadows, glow, stroke, bevel/emboss, satin, color/gradient overlay</li>
+<li>Gradient fills &mdash; linear, radial, angular, diamond</li>
+<li>Layer masks &mdash; raster and vector masks</li>
+<li>Smart objects &mdash; embedded content extracted as images</li>
+<li>Smart font mapping &mdash; Adobe CJK fonts mapped to system equivalents</li>
+</ul>
+<h3>Figma to PSD (Export)</h3>
+<ul>
+<li>Layer structure preserved &mdash; frames, groups, text, shapes as PSD layers</li>
+<li>Text with full styling &mdash; font, size, color, tracking, leading, decorations</li>
+<li>Effects &mdash; shadows, strokes converted to PSD layer effects</li>
+<li>Gradients &mdash; linear, radial, angular with color stops</li>
+<li>Blend modes &mdash; all 19 standard modes mapped</li>
+</ul>
+</section>
+
+<section class="pricing" id="pricing">
+<h2>Pricing</h2>
+<div class="plans">
+<div class="plan">
+<h3>Free</h3>
+<div class="price">$0<span>/month</span></div>
+<ul>
+<li>3 conversions per month</li>
+<li>Full import &amp; export</li>
+<li>All effects &amp; layer types</li>
+<li>Local processing</li>
+</ul>
+<a href="https://www.figma.com/community/plugin/1638574341047573772" class="cta secondary">Install Free</a>
+</div>
+<div class="plan pro">
+<span class="label">Pro</span>
+<h3>Pro</h3>
+<div class="price">$6<span>/month</span></div>
+<ul>
+<li>Unlimited conversions</li>
+<li>Full import &amp; export</li>
+<li>All effects &amp; layer types</li>
+<li>Local processing</li>
+<li>Priority support</li>
+</ul>
+<a href="https://www.figma.com/community/plugin/1638574341047573772" class="cta">Get Pro</a>
+</div>
+</div>
+</section>
+
+<section>
+<h2>How to use</h2>
+<h3>Import PSD</h3>
+<ol>
+<li>Open any Figma design file</li>
+<li>Run the plugin (Plugins &rarr; PSD &#8596; Figma)</li>
+<li>Select "Import PSD" mode</li>
+<li>Drop your .psd file or click to browse</li>
+<li>Done &mdash; your PSD layers are now editable Figma objects</li>
+</ol>
+<h3>Export PSD</h3>
+<ol>
+<li>Select a frame in Figma</li>
+<li>Run the plugin, select "Export PSD" mode</li>
+<li>Click "Export to PSD"</li>
+<li>PSD file downloads automatically</li>
+</ol>
+</section>
+
+</div>
+
+<footer>
+<div class="container">
+<a href="https://www.figma.com/community/plugin/1638574341047573772">Figma Community</a>
+<a href="terms.html">Terms of Service</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="refund.html">Refund Policy</a>
+<br><br>
+&copy; 2026 PSD ↔ Figma. All rights reserved.
+</div>
+</footer>
+</body>
+</html>
