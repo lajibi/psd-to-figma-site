@@ -34,6 +34,9 @@ li{margin-bottom:6px}
 footer{padding:32px 0;border-top:1px solid #eee;text-align:center;color:#999;font-size:0.85rem}
 footer a{color:#999;margin:0 12px}
 .privacy-note{background:#f8f9fa;border-radius:8px;padding:16px 20px;margin:20px 0;text-align:center;color:#555}
+.hero-img{width:100%;border-radius:12px;margin:24px 0 0;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+.feature-img{width:100%;max-width:480px;border-radius:10px;margin:16px auto;display:block}
+.privacy-img{width:100%;max-width:400px;border-radius:10px;margin:16px auto;display:block}
 </style>
 </head>
 <body>
@@ -43,6 +46,7 @@ footer a{color:#999;margin:0 12px}
 <p>Free bidirectional converter between Adobe Photoshop and Figma</p>
 <span class="badge">Figma Plugin</span>
 <span class="badge green">100% Local Processing</span>
+<img src="hero.png" alt="PSD to Figma bidirectional conversion" class="hero-img">
 </div>
 </header>
 
@@ -51,12 +55,14 @@ footer a{color:#999;margin:0 12px}
 <section>
 <h2>What it does</h2>
 <p>A Figma plugin that converts between Adobe Photoshop (.psd) files and Figma designs. Import PSD files into Figma with full layer fidelity, or export Figma frames back to layered PSD files.</p>
+<img src="privacy.png" alt="Local processing, files never leave your device" class="privacy-img">
 <div class="privacy-note">All processing happens locally in your browser. Your files are never uploaded to any server.</div>
 </section>
 
 <section>
 <h2>Features</h2>
 <h3>PSD to Figma (Import)</h3>
+<img src="import.png" alt="Import PSD layers into Figma" class="feature-img">
 <ul>
 <li>Full layer structure &mdash; groups, images, text, shapes with correct hierarchy</li>
 <li>Component detection &mdash; identifies repeated elements, converts to Figma Components</li>
@@ -68,6 +74,7 @@ footer a{color:#999;margin:0 12px}
 <li>Smart font mapping &mdash; Adobe CJK fonts mapped to system equivalents</li>
 </ul>
 <h3>Figma to PSD (Export)</h3>
+<img src="export.png" alt="Export Figma designs to PSD" class="feature-img">
 <ul>
 <li>Layer structure preserved &mdash; frames, groups, text, shapes as PSD layers</li>
 <li>Text with full styling &mdash; font, size, color, tracking, leading, decorations</li>
