@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful — PSD ↔ Figma Pro</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;line-height:1.6;background:#f8f9fa}
+.container{max-width:600px;margin:0 auto;padding:48px 24px}
+.card{background:#fff;border-radius:16px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.08);text-align:center}
+.icon{font-size:64px;margin-bottom:16px}
+h1{font-size:1.6rem;margin-bottom:8px;color:#1bc47d}
+.subtitle{color:#666;margin-bottom:32px}
+.lookup-box{text-align:left;background:#f8f9fa;border-radius:12px;padding:24px;margin-bottom:24px}
+.lookup-box label{display:block;font-weight:600;margin-bottom:8px;font-size:0.95rem}
+.lookup-box input{width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;font-size:1rem;margin-bottom:12px}
+.lookup-box input:focus{outline:none;border-color:#18A0FB}
+.lookup-btn{width:100%;padding:12px;background:#18A0FB;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer}
+.lookup-btn:hover{background:#0D8CE0}
+.key-display{display:none;background:#f0faf5;border:2px solid #1bc47d;border-radius:12px;padding:20px;margin:24px 0;text-align:center}
+.key-display .label{font-size:0.85rem;color:#666;margin-bottom:8px}
+.key-display .key{font-family:monospace;font-size:1.1rem;font-weight:700;color:#1a1a1a;word-break:break-all;user-select:all}
+.copy-btn{margin-top:12px;padding:8px 20px;background:#333;color:#fff;border:none;border-radius:6px;font-size:0.9rem;cursor:pointer}
+.copy-btn:hover{background:#555}
+.error-msg{display:none;color:#e03e3e;margin-top:12px;font-size:0.9rem}
+.steps{text-align:left;margin-top:24px;padding:20px;background:#f0f7ff;border-radius:10px}
+.steps h3{font-size:0.95rem;margin-bottom:10px;color:#333}
+.steps ol{padding-left:20px;color:#555;font-size:0.9rem}
+.steps li{margin-bottom:4px}
+footer{margin-top:48px;text-align:center;color:#999;font-size:0.85rem}
+footer a{color:#999;margin:0 12px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<div class="icon">&#10003;</div>
+<h1>Payment Successful!</h1>
+<p class="subtitle">Thank you for upgrading to Pro</p>
+
+<div class="lookup-box">
+<label>Enter your email to retrieve your license key:</label>
+<input type="email" id="email-input" placeholder="your@email.com">
+<button class="lookup-btn" onclick="lookupKey()">Get License Key</button>
+</div>
+
+<div class="error-msg" id="error-msg"></div>
+
+<div class="key-display" id="key-display">
+<div class="label">Your License Key</div>
+<div class="key" id="license-key"></div>
+<button class="copy-btn" onclick="copyKey()">Copy to Clipboard</button>
+</div>
+
+<div class="steps">
+<h3>Next steps:</h3>
+<ol>
+<li>Copy your license key above</li>
+<li>Open the PSD ↔ Figma plugin in Figma</li>
+<li>Click the "Free" badge at the bottom</li>
+<li>Paste your key and click Activate</li>
+</ol>
+</div>
+</div>
+
+<footer>
+<a href="index.html">Home</a>
+<a href="terms.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<br><br>
+&copy; 2026 PSD &harr; Figma. All rights reserved.
+</footer>
+</div>
+
+<script>
+async function lookupKey() {
+  const email = document.getElementById('email-input').value.trim();
+  const errorEl = document.getElementById('error-msg');
+  const keyDisplay = document.getElementById('key-display');
+
+  errorEl.style.display = 'none';
+  keyDisplay.style.display = 'none';
+
+  if (!email) {
+    errorEl.textContent = 'Please enter your email address.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  try {
+    const resp = await fetch('https://psd2figma-api.1856601.workers.dev/license/lookup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await resp.json();
+
+    if (data.key) {
+      document.getElementById('license-key').textContent = data.key;
+      keyDisplay.style.display = 'block';
+    } else {
+      errorEl.textContent = 'No license found for this email. It may take a minute to process — please try again shortly.';
+      errorEl.style.display = 'block';
+    }
+  } catch {
+    errorEl.textContent = 'Network error. Please try again.';
+    errorEl.style.display = 'block';
+  }
+}
+
+function copyKey() {
+  const key = document.getElementById('license-key').textContent;
+  navigator.clipboard.writeText(key);
+  const btn = event.target;
+  btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+}
+</script>
+</body>
+</html>

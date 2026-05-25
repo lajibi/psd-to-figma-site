@@ -63,18 +63,42 @@ footer a{color:#999;margin:0 12px}
 
 <hr class="divider">
 
-<a href="https://www.paypal.com/paypalme/psd2figma" class="paypal-btn">Subscribe with PayPal</a>
-<p class="secure">Secure payment processed by PayPal</p>
+<button onclick="startCheckout()" class="paypal-btn" id="checkout-btn">Subscribe — $6/month</button>
+<p class="secure">Secure payment processed by Creem</p>
 
 <div class="how">
 <h3>How it works:</h3>
 <ol>
-<li>Complete payment via PayPal</li>
-<li>Receive your license key by email within minutes</li>
-<li>Open the plugin in Figma, enter your license key</li>
-<li>Enjoy unlimited conversions</li>
+<li>Click Subscribe and complete payment</li>
+<li>Your license key will be shown on the success page</li>
+<li>Open the plugin in Figma, click the "Free" badge</li>
+<li>Enter your license key and click Activate</li>
 </ol>
 </div>
+
+<script>
+async function startCheckout() {
+  const btn = document.getElementById('checkout-btn');
+  btn.textContent = 'Redirecting...';
+  btn.style.opacity = '0.7';
+  try {
+    const resp = await fetch('https://psd2figma-api.1856601.workers.dev/checkout/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await resp.json();
+    if (data.checkout_url) {
+      window.location.href = data.checkout_url;
+    } else {
+      btn.textContent = 'Error — please try again';
+      btn.style.opacity = '1';
+    }
+  } catch {
+    btn.textContent = 'Error — please try again';
+    btn.style.opacity = '1';
+  }
+}
+</script>
 
 <div class="guarantee">14-day money-back guarantee, no questions asked</div>
 </div>
