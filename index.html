@@ -37,6 +37,17 @@ footer a{color:#999;margin:0 12px}
 .hero-img{width:100%;border-radius:12px;margin:24px 0 0;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
 .feature-img{width:100%;border-radius:10px;margin:16px auto;display:block;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
 .privacy-img{width:100%;border-radius:10px;margin:16px auto;display:block;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+.toolkit{background:#101827;color:#f9fafb;border-radius:12px;padding:28px;margin:8px 0 0;border-top:0}
+.toolkit h2{color:#fff;margin-bottom:10px}
+.toolkit p{color:#cbd5e1}
+.toolkit .kicker{display:inline-block;background:rgba(27,196,125,0.16);color:#bbf7d0;border:1px solid rgba(27,196,125,0.35);padding:4px 10px;border-radius:999px;font-size:0.82rem;font-weight:700;margin-bottom:12px}
+.toolkit-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px;margin-top:20px}
+.toolkit-card{display:block;text-decoration:none;color:#f9fafb;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:16px}
+.toolkit-card strong{display:block;margin-bottom:6px;color:#fff}
+.toolkit-card span{display:block;color:#cbd5e1;font-size:0.92rem}
+.toolkit-card.featured{background:linear-gradient(135deg,rgba(24,160,251,0.22),rgba(27,196,125,0.18));border-color:rgba(24,160,251,0.45)}
+.toolkit-card em{display:inline-block;margin-top:12px;font-style:normal;font-size:0.78rem;font-weight:700;color:#bbf7d0;background:rgba(27,196,125,0.18);border:1px solid rgba(27,196,125,0.32);border-radius:999px;padding:4px 9px}
+@media(max-width:760px){.toolkit-grid{grid-template-columns:1fr}.toolkit{padding:22px}}
 </style>
 </head>
 <body>
@@ -82,6 +93,27 @@ footer a{color:#999;margin:0 12px}
 <li>Gradients &mdash; linear, radial, angular with color stops</li>
 <li>Blend modes &mdash; all 19 standard modes mapped</li>
 </ul>
+</section>
+
+<section class="toolkit">
+<span class="kicker">PSD2Figma toolkit · Free to start</span>
+<h2>Import PSD, then keep adjusting inside Figma</h2>
+<p>After PSD2Figma brings your Photoshop layers into Figma, use Vibe UI Assistant to move, align, scale, and re-text the imported UI directly. No repeated PSD edits and re-imports for small layout fixes.</p>
+<div class="toolkit-grid">
+<a class="toolkit-card featured" href="https://vibe-ui.psd2figma.cloud">
+<strong>Vibe UI Assistant</strong>
+<span>Edit Figma like Photoshop layers after PSD import.</span>
+<em>Priority tool · Free 1h/day</em>
+</a>
+<a class="toolkit-card" href="https://web2figma.psd2figma.cloud">
+<strong>Web2Figma Lite</strong>
+<span>Capture public web pages into editable Figma drafts.</span>
+</a>
+<a class="toolkit-card" href="https://mockup-lite.psd2figma.cloud">
+<strong>Mockup Lite</strong>
+<span>Place finished UI into polished device and presentation frames.</span>
+</a>
+</div>
 </section>
 
 <section class="pricing" id="pricing">
