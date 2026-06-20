@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSD2Figma Toolkit - Figma Plugins</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#111827;line-height:1.6;background:#f8fafc}
+.container{max-width:1040px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 34px;background:#101827;color:#f9fafb}
+header p{max-width:720px;color:#cbd5e1;margin-top:12px;font-size:1.1rem}
+h1{font-size:2.45rem;line-height:1.12}
+h2{font-size:1.35rem;margin:0 0 12px}
+.badge{display:inline-block;background:rgba(27,196,125,0.16);color:#bbf7d0;border:1px solid rgba(27,196,125,0.35);padding:5px 11px;border-radius:999px;font-size:.86rem;font-weight:700;margin-bottom:14px}
+.section{padding:34px 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.button{display:inline-block;background:#18A0FB;color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:8px}
+.button.secondary{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.featured{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
+.panel{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.panel.dark{background:#111827;color:#f9fafb;border-color:#1f2937}
+.panel.dark p{color:#cbd5e1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{display:block;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px;text-decoration:none;color:#111827;min-height:164px}
+.card:hover{border-color:#18A0FB;box-shadow:0 10px 28px rgba(24,160,251,.12)}
+.card strong{display:block;font-size:1.06rem;margin-bottom:7px}
+.card span{display:block;color:#4b5563;font-size:.94rem}
+.role{display:inline-block;margin-top:14px;background:#eef2ff;color:#3730a3;border-radius:999px;padding:4px 9px;font-size:.78rem;font-weight:700}
+.free{display:inline-block;margin-top:12px;background:#ecfdf5;color:#047857;border:1px solid #bbf7d0;border-radius:999px;padding:4px 9px;font-size:.78rem;font-weight:700}
+footer{padding:30px 0;border-top:1px solid #e5e7eb;color:#6b7280;font-size:.9rem}
+footer a{color:#6b7280;margin-right:16px}
+@media(max-width:820px){.featured,.grid{grid-template-columns:1fr}h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<span class="badge">PSD2Figma toolkit</span>
+<h1>Import PSD, then keep editing in Figma.</h1>
+<p>PSD2Figma brings Photoshop files into Figma. Vibe UI Assistant is the next step: move, align, scale, and re-text imported UI directly, without switching back to Photoshop and re-importing PSD files for every small adjustment.</p>
+<div class="hero-actions">
+<a class="button" href="https://vibe-ui.psd2figma.cloud">Try Vibe UI Assistant free</a>
+<a class="button secondary" href="https://www.figma.com/community/plugin/1638574341047573772">Install PSD2Figma</a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="container featured">
+<a class="panel dark" href="https://vibe-ui.psd2figma.cloud">
+<h2>Priority: Vibe UI Assistant</h2>
+<p>Edit Figma like Photoshop layers after PSD import. Diagnose why something will not move, free it from layout constraints, then adjust position, alignment, scale, and text directly inside Figma.</p>
+<span class="free">Free 1h/day</span>
+</a>
+<div class="panel">
+<h2>Why this matrix exists</h2>
+<p>The products should not be isolated. PSD2Figma is the traffic source; Vibe UI handles after-import editing; the Lite tools support cleanup, handoff, image work, tables, flows, and presentation.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="grid">
+<a class="card" href="https://psd2figma.cloud"><strong>PSD2Figma</strong><span>Convert PSD layouts into editable Figma layers, then use Vibe UI for after-import adjustment.</span><em class="role">Traffic source</em></a>
+<a class="card" href="https://web2figma.psd2figma.cloud"><strong>Web2Figma Lite</strong><span>Capture public web pages into Figma when the starting point is a live site instead of PSD.</span><em class="role">Web capture</em></a>
+<a class="card" href="https://flowarrow.psd2figma.cloud"><strong>FlowArrow Lite</strong><span>Add clean arrows and flows after the imported layout is organized.</span><em class="role">Diagram cleanup</em></a>
+<a class="card" href="https://type-tools.psd2figma.cloud"><strong>Type Tools Lite</strong><span>Clean, replace, and reshape text in imported or handoff files.</span><em class="role">Text cleanup</em></a>
+<a class="card" href="https://a11y.psd2figma.cloud"><strong>A11y Lite</strong><span>Check contrast and basic accessibility before handoff.</span><em class="role">Accessibility</em></a>
+<a class="card" href="https://token-export.psd2figma.cloud"><strong>Token Export Lite</strong><span>Export colors and variables after the Figma file is cleaned.</span><em class="role">Handoff</em></a>
+<a class="card" href="https://tiny-image-toolkit.psd2figma.cloud"><strong>Tiny Image Toolkit</strong><span>Compress, export, and prepare images inside the Figma workflow.</span><em class="role">Image cleanup</em></a>
+<a class="card" href="https://mockup-lite.psd2figma.cloud"><strong>Mockup Lite</strong><span>Turn cleaned screens into simple device mockups for presentation.</span><em class="role">Presentation</em></a>
+<a class="card" href="https://table-builder.psd2figma.cloud"><strong>Table Builder Lite</strong><span>Build editable Figma tables for pricing, specs, product docs, and admin UI layouts.</span><em class="role">Structured layout</em></a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<a href="index.html">PSD2Figma</a>
+<a href="https://vibe-ui.psd2figma.cloud">Vibe UI Assistant</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+</div>
+</footer>
+</body>
+</html>
